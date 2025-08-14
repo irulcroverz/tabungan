@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Tabungan Pernikahan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="app">
+    <!-- LEFT: Daftar Setoran -->
+    <section class="left card">
+      <div class="title">
+        <h3>Daftar Setoran</h3>
+        <div class="small" id="countBadge">0 transaksi</div>
+      </div>
+      <div style="display:flex; gap:8px; margin-bottom:8px; flex-wrap: wrap;">
+        <input id="filterName" type="text" placeholder="Cari nama..." />
+        <select id="filterSort">
+          <option value="new">Terbaru</option>
+          <option value="old">Terlama</option>
+          <option value="big">Terbesar</option>
+          <option value="small">Terkecil</option>
+        </select>
+      </div>
+      <div class="sheet-list" id="sheetList">
+        <div class="empty">Belum ada setoran. Tambahkan di panel kanan.</div>
+      </div>
+    </section>
+
+    <!-- CENTER: Foto Pasangan -->
+    <main class="center">
+      <div class="photo-card">
+        <div class="photo">
+          <img src="foto/WhatsApp Image 2025-08-10 at 22.15.17_8590f9cc (1).jpg" alt="Foto pasangan">
+        </div>
+        <div class="overlay">
+          <div class="text-info">
+            <div class="names" id="namesLabel">Nabiila Nahda & Choirul Rosyidin</div>
+            <div class="meta small">Menabung adalah investasi cinta untuk masa depan bersama.</div>
+          </div>
+          <div class="heart">❤️</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- RIGHT: Ringkasan & Input -->
+    <aside class="right card">
+      <div class="title">
+        <h3>Ringkasan Tabungan</h3>
+        <div class="meta">Target: <strong id="targetLabel">Rp 200.000.000</strong></div>
+      </div>
+      <div class="total" id="totalLabel">Rp 0</div>
+      <div class="meta">Terkumpul dari <span id="payerCount">0</span> penyetor</div>
+      <div class="progress"><i id="progressBar"></i></div>
+      <div style="display:flex; justify-content:space-between; margin-top:10px;">
+        <div><div class="meta small">Sisa</div><div id="remaining">Rp 200.000.000</div></div>
+        <div><div class="meta small">Rata-rata</div><div id="avg">Rp 0</div></div>
+      </div>
+      <hr>
+
+      <!-- Input Setoran -->
+      <div>
+        <div class="meta small">Tambah setoran</div>
+        <div class="form-row">
+          <input id="inputPayer" type="text" placeholder="Nama penyetor" />
+          <input id="inputAmount" type="text" placeholder="Rp" />
+        </div>
+        <div class="form-row">
+          <button class="btn" id="addBtn">Tambah</button>
+          <button class="btn ghost" id="resetBtn">Reset</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
